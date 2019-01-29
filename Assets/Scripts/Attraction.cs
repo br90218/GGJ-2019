@@ -100,7 +100,7 @@ public class Attraction : MonoBehaviour
     private void Onattract(string Objectname)
     {
         range.SetActive(true);
-        if (distance <= attractRange && !(movement.state == Movement.State.idle && anothermovement.state == Movement.State.idle))
+        if (distance <= attractRange && (anothermovement.state == Movement.State.flying || anothermovement.state == Movement.State.landing))
         {
             print(Input.GetKey(KeyCode.Backspace));
             linerender.enabled = true;
